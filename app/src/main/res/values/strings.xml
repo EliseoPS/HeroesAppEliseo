@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">HeroesApp</string>
+    <string name="email">Ingrese su correo</string>
+    <string name="password">Ingrese su contraseña</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="elige_tu_publicante">Elige tu publicante:</string>
+    <string name="namePublisher">Nombre Publisher</string>
+</resources>
