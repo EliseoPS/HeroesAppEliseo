@@ -5,4 +5,6 @@
     <string name="login">Iniciar sesión</string>
     <string name="elige_tu_publicante">Elige tu publicante:</string>
     <string name="namePublisher">Nombre Publisher</string>
+    <string name="nombre_heroe">Nombre Heroe</string>
+    <string name="descripcion_del_heroe">Descripción del heroe</string>
 </resources>

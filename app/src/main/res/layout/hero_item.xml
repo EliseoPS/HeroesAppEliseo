@@ -2,26 +2,37 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="250dp"
-              android:layout_height="250dp"
+              android:layout_height="375dp"
               android:layout_margin="20dp"
 >
-    <ImageButton
-            android:id="@+id/publisherImg"
+    <ImageView
+            android:id="@+id/heroImg"
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:scaleType="fitCenter"
-            android:src="@drawable/marvelogo"
+            android:src="@drawable/spider"
             android:layout_gravity="center_horizontal"
-            android:background="@color/white"
     />
     <TextView
-            android:id="@+id/publisherName"
+            android:id="@+id/heroName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/namePublisher"
+            android:text="@string/nombre_heroe"
             android:textAlignment="center"
             android:layout_gravity="center_horizontal"
             android:textSize="18dp"
+            android:textColor="@color/black"
+    />
+    <TextView
+            android:id="@+id/heroDescription"
+            android:layout_width="180dp"
+            android:layout_height="119dp"
+            android:text="@string/descripcion_del_heroe"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:textSize="13sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
     />
 
 </LinearLayout>

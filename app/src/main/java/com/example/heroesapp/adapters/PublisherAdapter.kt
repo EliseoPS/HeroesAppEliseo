@@ -11,7 +11,7 @@ import com.example.heroesapp.R
 import com.example.heroesapp.models.Publisher
 import com.squareup.picasso.Picasso
 
-class PublisherAdapter(val publishers : List<Publisher>)
+class PublisherAdapter(val publishers : List<Publisher>, val onClick:(Publisher)->Unit)
     : RecyclerView.Adapter<PublisherViewHolder>()
 {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PublisherViewHolder {
@@ -32,6 +32,10 @@ class PublisherAdapter(val publishers : List<Publisher>)
         holder.publisherName.text = publisher.name
         Picasso.get().load(publisher.image).into(holder.publisherImage)
 
+        holder.publisherImage.setOnClickListener{
+            onClick(publisher)
+        }
+
     }
 
 }
@@ -40,6 +44,7 @@ class PublisherViewHolder(view : View) : ViewHolder(view){
     //Igualamos cada cosa a view para indicar que va a buscar esos elementos en la vista de Publisher y los busca por su id
     val publisherImage : ImageView = view.findViewById(R.id.publisherImg)
     val publisherName : TextView = view.findViewById(R.id.publisherName)
+
 
 }
 

@@ -2,6 +2,7 @@ package com.example.heroesapp.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -21,6 +22,7 @@ class PublisherActivity : AppCompatActivity() {
     lateinit var logoutBtn : ImageView
 
 
+
     lateinit var publisherRecyclerView: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,12 +30,21 @@ class PublisherActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_publisher)
 
+
         val sharedPreferences = getSharedPreferences("mypref", MODE_PRIVATE)
         //para poder referenciar a nuestro recycler view
         publisherRecyclerView = findViewById(R.id.publishersRecyclerview)
 
         //f
-        publisherRecyclerView.adapter = PublisherAdapter(Publisher.publishers)
+        publisherRecyclerView.adapter = PublisherAdapter(Publisher.publishers){
+            publisher ->
+            val intent = Intent(this@PublisherActivity, HerosActivity::class.java).apply {
+                putExtra("publisherID", publisher.id)
+            }
+            Log.i("Navegacion",publisher.toString())
+            startActivity(intent)
+        }
+
         //Para elegir de que manera (vertical, horiz. etc) queremos mostrar los recyclerview
         publisherRecyclerView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
 
