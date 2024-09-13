@@ -31,6 +31,7 @@ class HeroAdapter(val heroes : List<Hero>)
         val hero = heroes[position]
         holder.heroName.text = hero.name
         Picasso.get().load(hero.image).into(holder.heroImage)
+        holder.heroDescription.text = hero.description
 
     }
 
@@ -40,6 +41,7 @@ class HeroViewHolder(view : View) : ViewHolder(view){
     //Igualamos cada cosa a view para indicar que va a buscar esos elementos en la vista de Publisher y los busca por su id
     val heroImage : ImageView = view.findViewById(R.id.heroImg)
     val heroName : TextView = view.findViewById(R.id.heroName)
+    val heroDescription : TextView = view.findViewById(R.id.heroDescription)
 
 }
 

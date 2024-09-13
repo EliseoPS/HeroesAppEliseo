@@ -43,7 +43,7 @@ data class Hero(val id : Int, val name : String, val image : String, val descrip
             Hero(
                 7,
                 "Batman",
-                "https://scontent-atl3-1.cdninstagram.com/v/t51.29350-15/122910585_126626012543382_8632464331362264930_n.jpg?stp=c215.0.647.646a_dst-jpg_s640x640&_nc_cat=103&ccb=1-7&_nc_sid=18de74&_nc_ohc=qMtVM0Hmc90Q7kNvgEBZFRD&_nc_ht=scontent-atl3-1.cdninstagram.com&oh=00_AYCty5Bvvg0dHq27uPYrJ-fraKAHuat6mOCsndoPFQpomw&oe=66E30D3E",
+                "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/47ed6547-a02c-4fce-9613-cefe4c3fd17b/dech4lt-087ecd78-51f4-4ecd-a7ff-d3bd6d9e7237.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzQ3ZWQ2NTQ3LWEwMmMtNGZjZS05NjEzLWNlZmU0YzNmZDE3YlwvZGVjaDRsdC0wODdlY2Q3OC01MWY0LTRlY2QtYTdmZi1kM2JkNmQ5ZTcyMzcuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.7B3YLHC81-Urz68WfHPAbNFwu9G4nr7g7qQRNS5CnNw",
                 "Bruce Wayne, un multimillonario con un pasado trágico, usa su intelecto y habilidades de detective para combatir el crimen en Gotham City.",
                 2),
             Hero(
