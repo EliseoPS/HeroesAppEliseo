@@ -32,6 +32,12 @@ class PublisherActivity : AppCompatActivity() {
 
 
         val sharedPreferences = getSharedPreferences("mypref", MODE_PRIVATE)
+        val userName = sharedPreferences.getString("userName", "Usuario")
+
+        username = findViewById(R.id.usernameTV)
+        username.text = "Hola $userName"
+
+
         //para poder referenciar a nuestro recycler view
         publisherRecyclerView = findViewById(R.id.publishersRecyclerview)
 
@@ -40,6 +46,7 @@ class PublisherActivity : AppCompatActivity() {
             publisher ->
             val intent = Intent(this@PublisherActivity, HerosActivity::class.java).apply {
                 putExtra("publisherID", publisher.id)
+                putExtra("publisherName", publisher.name)
             }
             Log.i("Navegacion",publisher.toString())
             startActivity(intent)

@@ -46,5 +46,6 @@ class PublisherViewHolder(view : View) : ViewHolder(view){
     val publisherName : TextView = view.findViewById(R.id.publisherName)
 
 
+
 }
 

@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="250dp"
-              android:layout_height="375dp"
+              android:layout_height="370dp"
               android:layout_margin="20dp"
 >
     <ImageView
@@ -22,11 +22,12 @@
             android:layout_gravity="center_horizontal"
             android:textSize="18dp"
             android:textColor="@color/black"
+            android:paddingTop="10dp"
     />
     <TextView
             android:id="@+id/heroDescription"
             android:layout_width="235dp"
-            android:layout_height="127dp"
+            android:layout_height="96dp"
             android:text="@string/descripcion_del_heroe"
             android:layout_gravity="center"
             android:gravity="start"

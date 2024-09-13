@@ -61,6 +61,7 @@ class MainActivity : AppCompatActivity() {
             val editor = sharedPreferences.edit()
             editor.putBoolean("isLogged",true)
             editor.putString("userEmail",user?.email)
+            editor.putString("userName", user?.name)
             editor.apply()
 
             startActivity(intent)

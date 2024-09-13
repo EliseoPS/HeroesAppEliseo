@@ -3,6 +3,7 @@ package com.example.heroesapp.ui
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -20,6 +21,7 @@ class HerosActivity : AppCompatActivity() {
 
     lateinit var heroRecyclerView: RecyclerView
     lateinit var salirBtn : ImageView
+    lateinit var txtHeroesDe: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,8 +31,13 @@ class HerosActivity : AppCompatActivity() {
         val publisherID = intent.getIntExtra("publisherID",0)
         val publisher = Publisher.publishers.firstOrNull() {it.id == publisherID}
         val heroes = Hero.heroes.filter { it.publisherId == publisherID }
+        val publisherName = intent.getStringExtra("publisherName") ?: "Publisher"
 
         heroRecyclerView = findViewById(R.id.heroesRecyclerview)
+
+        txtHeroesDe = findViewById(R.id.txtHeroesDe)
+        txtHeroesDe.text = "Heroes de: $publisherName"
+
 
         heroRecyclerView.adapter = HeroAdapter(heroes)
         //Para elegir de que manera (vertical, horiz. etc) queremos mostrar los recyclerview
