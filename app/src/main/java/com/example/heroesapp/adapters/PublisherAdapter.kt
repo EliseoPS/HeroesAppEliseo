@@ -30,6 +30,7 @@ class PublisherAdapter(val publishers : List<Publisher>, val onClick:(Publisher)
         //Este metodo va a ir elemento por elemento obteniendo sus datos
         val publisher = publishers[position]
         holder.publisherName.text = publisher.name
+        //cargar imagenes en la vista desde el holder
         Picasso.get().load(publisher.image).into(holder.publisherImage)
 
         holder.publisherImage.setOnClickListener{

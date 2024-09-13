@@ -33,7 +33,7 @@ class PublisherActivity : AppCompatActivity() {
 
         val sharedPreferences = getSharedPreferences("mypref", MODE_PRIVATE)
         val userName = sharedPreferences.getString("userName", "Usuario")
-
+//Variables necesarias para poner el nombre del usuario loggeado
         username = findViewById(R.id.usernameTV)
         username.text = "Hola $userName"
 
@@ -47,6 +47,7 @@ class PublisherActivity : AppCompatActivity() {
             val intent = Intent(this@PublisherActivity, HerosActivity::class.java).apply {
                 putExtra("publisherID", publisher.id)
                 putExtra("publisherName", publisher.name)
+                //Guardamos el nombre y ID de cada publicadora
             }
             Log.i("Navegacion",publisher.toString())
             startActivity(intent)
@@ -57,12 +58,13 @@ class PublisherActivity : AppCompatActivity() {
 
         username = findViewById(R.id.usernameTV)
         logoutBtn = findViewById(R.id.logoutBtn)
-
+//metodo para salir de la activity y borrar las flags de logged para volver a pedir login
         logoutBtn.setOnClickListener{
             val editor = sharedPreferences.edit()
+            //aqui se quita el estatus de loggeado
             editor.remove("isLogged")
             editor.apply()
-
+//esto es para volver al login
             val intent = Intent(this@PublisherActivity,MainActivity::class.java)
             startActivity(intent)
             finish()

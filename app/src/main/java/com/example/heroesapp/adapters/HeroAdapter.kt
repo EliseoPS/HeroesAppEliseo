@@ -28,6 +28,7 @@ class HeroAdapter(val heroes : List<Hero>)
 
     override fun onBindViewHolder(holder: HeroViewHolder, position: Int) {
         //Este metodo va a ir elemento por elemento obteniendo sus datos
+        //Busca y almacena cada dato del objeto Hero
         val hero = heroes[position]
         holder.heroName.text = hero.name
         Picasso.get().load(hero.image).into(holder.heroImage)

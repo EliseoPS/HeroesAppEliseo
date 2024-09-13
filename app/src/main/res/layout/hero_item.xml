@@ -26,7 +26,7 @@
     />
     <TextView
             android:id="@+id/heroDescription"
-            android:layout_width="235dp"
+            android:layout_width="192dp"
             android:layout_height="96dp"
             android:text="@string/descripcion_del_heroe"
             android:layout_gravity="center"

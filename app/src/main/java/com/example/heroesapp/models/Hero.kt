@@ -1,14 +1,15 @@
 package com.example.heroesapp.models
-
+//Campos de objeto heroe y su tipo de dato
 data class Hero(val id : Int, val name : String, val image : String, val description : String, val publisherId : Int){
 
     companion object{
         val heroes = mutableListOf<Hero>(
+            //Precarga de heroes con sus campos llenos
             Hero(
                 1,
                 "Spiderman",
-                "https://img.redbull.com/images/c_crop,x_283,y_0,h_1080,w_864/c_fill,w_450,h_600/q_auto:low,f_auto/redbullcom/2018/09/04/c71e5b50-b02e-4a42-89a3-3c8f9de164b0/spider-man-ps4",
-                "Peter Parker, es un adolecente que fue mordido por una araña radioactiva que le dio poderes increibles como trapara por las paredes y lanzar telarañas, es chavo cul.",
+                "https://media.vandal.net/i/1280x720/10-2023/17/202310171642263_5.jpg",
+                "Peter Parker, es un adolecente que fue mordido por una araña radioactiva que le dio poderes increibles, es chavo cul.",
                 1),
             Hero(
                 2,
@@ -25,7 +26,7 @@ data class Hero(val id : Int, val name : String, val image : String, val descrip
             Hero(
                 4,
                 "Thor",
-                "https://static.wikia.nocookie.net/marvelall/images/2/23/Thor.jpg/revision/latest/scale-to-width-down/350?cb=20130706024111&path-prefix=es",
+                "https://hips.hearstapps.com/hmg-prod/images/chris-hemsworth-thor-1623742528.jpeg",
                 "El dios del trueno, hijo de Odín, lucha para proteger tanto a la Tierra como a Asgard con su martillo Mjolnir.",
                 1),
             Hero(

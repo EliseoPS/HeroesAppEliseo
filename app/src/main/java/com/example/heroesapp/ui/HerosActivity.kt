@@ -30,12 +30,15 @@ class HerosActivity : AppCompatActivity() {
 
         val publisherID = intent.getIntExtra("publisherID",0)
         val publisher = Publisher.publishers.firstOrNull() {it.id == publisherID}
+        //Esto es para mostrar solo los heroes con el id de la publicadora sobre la que hicimos click
         val heroes = Hero.heroes.filter { it.publisherId == publisherID }
         val publisherName = intent.getStringExtra("publisherName") ?: "Publisher"
-
+        //Declaramos el recycler view de los hereos
         heroRecyclerView = findViewById(R.id.heroesRecyclerview)
 
+        //variables para poder escribir la descripcion
         txtHeroesDe = findViewById(R.id.txtHeroesDe)
+        //Con esto se escribe en el textview de la barra el npmbre de la publicadora sobre la que se hace click
         txtHeroesDe.text = "Heroes de: $publisherName"
 
 
@@ -44,7 +47,7 @@ class HerosActivity : AppCompatActivity() {
         heroRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)
 
         salirBtn = findViewById(R.id.atrasBtn)
-
+//boton para salir de la activity
         salirBtn.setOnClickListener{
             val intent = Intent(this@HerosActivity, MainActivity::class.java)
             startActivity(intent)

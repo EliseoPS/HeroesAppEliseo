@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         val isLogged = sharedPreferences.getBoolean("isLogged",false)
         val intent = Intent(this@MainActivity, PublisherActivity::class.java)
 
+// Si el usuario ya está logueado, manda a PublisherActivity
         if(isLogged){
             startActivity(intent)
             finish()
@@ -43,21 +44,26 @@ class MainActivity : AppCompatActivity() {
             Log.i("EMAIL",email)
             Log.i("PASSWORD", password)
 
+// Verifica si email o password están vacíos
             if(email.isEmpty() || password.isEmpty()){
                 Log.i("ERROR","La constraseña o email estan vacios")
                 return@setOnClickListener
             }
+            // Verifica si el usuario es válido
             val isValidUser = User.staticUsers.any {
                     user-> user.email == email && user.password == password
             }
+            // si no es valido mandamos al logcat un error
             if (!isValidUser) {
                 Log.i("ERROR","El correo o passwrd son incorrectos")
                 return@setOnClickListener
             }
+            //agarra el primer usuario que conicda y lo iguala a user
             val user = User.staticUsers.firstOrNull{
                 it.email == email && it.password == password
             }
-
+// Guarda el estado de inicio de sesión y el usuario en SharedPreferences
+            //tambien su nombre para poder usarlo en otras activities
             val editor = sharedPreferences.edit()
             editor.putBoolean("isLogged",true)
             editor.putString("userEmail",user?.email)
